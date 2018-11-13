@@ -1,0 +1,51 @@
+﻿<Window x:Name="Books" x:Class="LibrarySystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibrarySystem"
+        mc:Ignorable="d"
+        Title="Books" Height="475" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="293" Margin="5,5,0,0" VerticalAlignment="Top" Width="467">
+            <TabItem x:Name="Books_Tab" Header="Book" Loaded="Books_Loaded">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+                    <DataGrid x:Name="BookListsDataGridView"   CanUserAddRows="False" CanUserSortColumns="True" Background="Beige" AlternatingRowBackground="Azure" RowBackground="Beige"  HeadersVisibility="Column"   CanUserResizeColumns="True" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="450" Margin="5,5,0,0" Grid.ColumnSpan="2" MouseDoubleClick="SelectBookRow_Edit">
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Users_Tab" Header="User" Loaded="User_Loaded" >
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="UserDataGridView"   CanUserAddRows="False" CanUserSortColumns="True" Background="Beige" AlternatingRowBackground="Azure" RowBackground="Beige"  HeadersVisibility="Column"   CanUserResizeColumns="True" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="450" Margin="5,5,0,0" Grid.ColumnSpan="2" MouseDoubleClick="SelectUserRow_Edit">
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Button x:Name="AddBook_btn" Content="Add" HorizontalAlignment="Left" Margin="698,80,0,0" VerticalAlignment="Top" Width="67" Height="27" Click="AddBook_btn_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="Updatebook_Btn" Content="Update" HorizontalAlignment="Left" Margin="697,116,0,0" VerticalAlignment="Top" Width="67" Height="27" Grid.ColumnSpan="2" Click="Updatebook_Btn_Click"/>
+        <Button x:Name="Deletebook_Btn" Content="Delete" HorizontalAlignment="Left" Margin="698,151,0,0" VerticalAlignment="Top" Width="67" Height="27" Click="Deletebook_Btn_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="Exit_Btn" Content="Exit" HorizontalAlignment="Left" Margin="607,347,0,0" VerticalAlignment="Top" Width="158" Height="49" Click="Exit_Btn_Click" Grid.ColumnSpan="2"/>
+        <Label x:Name="BookName_Lbl" Content="Book Name" HorizontalAlignment="Left" Margin="492,98,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Label x:Name="Author_Lbl" Content="Author" HorizontalAlignment="Left" Margin="492,128,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <TextBox x:Name ="BookName_TextBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text=""  Margin="567,99,0,0" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2"/>
+        <TextBox x:Name ="Author_TextBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text=""  Margin="567,130,0,0" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2"/>
+        <Label x:Name="UserName_Lbl" Content="User Name" HorizontalAlignment="Left" Margin="100,329,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Label x:Name="FullName_Lbl" Content="Full Name" HorizontalAlignment="Left" Margin="100,359,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Label x:Name="Age_Lbl" Content="Age" HorizontalAlignment="Left" Margin="100,389,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <TextBox x:Name ="UserName_TextBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text=""  Margin="183,329,0,0" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+        <TextBox x:Name ="FullName_TextBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text=""  Margin="183,359,0,0" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+        <TextBox x:Name ="Age_TextBox" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text=""  Margin="183,389,0,0" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="AddUser_btn" Content="Add" HorizontalAlignment="Left" Margin="322,322,0,0" VerticalAlignment="Top" Width="67" Height="27" Click="AddCustomer_btn_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="UpdateUser_Btn" Content="Update" HorizontalAlignment="Left" Margin="321,358,0,0" VerticalAlignment="Top" Width="67" Height="27" Grid.ColumnSpan="2" Click="UpdateCustomer_Btn_Click"/>
+        <Button x:Name="DeleteUser_Btn" Content="Delete" HorizontalAlignment="Left" Margin="322,393,0,0" VerticalAlignment="Top" Width="67" Height="27" Click="DeleteCustomer_Btn_Click" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
